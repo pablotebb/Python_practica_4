@@ -60,4 +60,58 @@ def pregunta_correcto(frase_entrada, intentos=4, frase_final_bucle="Intentalo de
       continue
     
   
-pregunta_correcto("Quieres salir? (S/N) ")
+# pregunta_correcto("Quieres salir? (S/N) ")
+
+
+
+def f(a, L=[]):
+  L.append(a)
+  return L
+
+print(f(1))
+print(f(2))
+print(f(3))
+
+
+def tienda(kind, *arguments, **keywords):
+  print("--Tiene alguna", kind, "?")
+  print("--Perdone, aqui tiene la", kind) 
+  for arg in arguments:
+    print(arg)
+  print("-" * 40)
+  for kw in keywords:
+    print(kw, ":", keywords[kw])
+    
+tienda("Hamburguesa", "Muy rapido Sr", "Muy rapido, muy rapido, Sr", vendedor="Pepito Perez", cliente="Marco Aurelio", tienda="Tienda de Paco")
+
+
+def concat(*args, sep="-"):
+  return sep.join(args)
+
+print("*" * 40)
+
+print(concat("Brasi", "Chile", "Argentina"))
+
+
+def haz_incrementar(n):
+  return lambda x: x + n
+
+f = haz_incrementar(40)
+print(f(1))
+print(f(2))
+print(f(3))
+
+
+pares = [(1, "uno"), (2, "dos"), (3, "tres"), (4, "cuatro")]
+pares.sort(key=lambda par: par[1])
+
+print(pares)
+
+
+def mi_funcion():
+  """
+  Esta función no hace nada
+  """
+  pass
+
+print(mi_funcion.__doc__)
